@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questions ❤️</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.container{
+    max-width:700px;
+    margin:auto;
+    padding:20px;
+}
+
+.question{
+    margin:20px 0;
+}
+
+.question p{
+    font-size:20px;
+    color:#ff1493;
+    font-weight:bold;
+}
+
+textarea,
+input{
+    width:100%;
+    padding:12px;
+    border:2px solid pink;
+    border-radius:10px;
+    font-size:16px;
+}
+
+button{
+    margin-top:20px;
+    padding:15px 30px;
+    background:#ff4d88;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:20px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff1f6b;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<a href="home.html">🏠 Home</a>
+<a href="letter.html">💌 Letter</a>
+<a href="gallery.html">📸 Gallery</a>
+<a href="questions.html">💕 Questions</a>
+<a href="memories.html">⏳ Memories</a>
+<a href="surprise.html">🎁 Surprise</a>
+<a href="music.html">🎵 Music</a>
+</nav>
+
+<div class="container">
+
+<h1>💕 Questions For You 💕</h1>
+
+<form action="https://formspree.io/f/mvzeoajn" method="POST">
+
+<div class="question">
+<p>👤 Your Name</p>
+<input type="text" name="Name" required>
+</div>
+
+<div class="question">
+<p>🥺 Would you cry for me?</p>
+<textarea name="Would you cry for me?" required></textarea>
+</div>
+
+<div class="question">
+<p>😁 What is your favorite thing about me?</p>
+<textarea name="Favorite thing about me" required></textarea>
+</div>
+
+<div class="question">
+<p>❤️ What do you like most about me?</p>
+<textarea name="What do you like most about me?" required></textarea>
+</div>
+
+<div class="question">
+<p>💌 Write a sweet message for me.</p>
+<textarea name="Message"></textarea>
+</div>
+
+<button type="submit">💖 Submit Answers 💖</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
