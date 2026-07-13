@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Memories ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+<a href="home.html">🏠 Home</a>
+<a href="letter.html">💌 Letter</a>
+<a href="gallery.html">📸 Gallery</a>
+<a href="questions.html">💕 Questions</a>
+<a href="memories.html">⏳ Memories</a>
+<a href="surprise.html">🎁 Surprise</a>
+<a href="music.html">🎵 Music</a>
+</nav>
+
+<div class="container">
+
+<h1>⏳ Since We Met</h1>
+
+<h2 id="days"></h2>
+
+<p>Every day with you is special. ❤️</p>
+
+</div>
+
+<script>
+const start = new Date("2026-06-15");
+const today = new Date();
+const diff = today - start;
+const days = Math.floor(diff/(1000*60*60*24));
+document.getElementById("days").innerHTML =
+days + " Days Together ❤️";
+</script>
+
+</body>
+</html>
