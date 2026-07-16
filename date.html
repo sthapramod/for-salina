@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Date With Me ❤️</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#ffd6e8,#fff0f6);
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+text-align:center;
+}
+
+.container{
+position:relative;
+}
+
+h1{
+color:#ff1493;
+font-size:45px;
+}
+
+p{
+font-size:24px;
+color:#ff1493;
+}
+
+button{
+padding:15px 35px;
+font-size:22px;
+border:none;
+border-radius:12px;
+cursor:pointer;
+transition:.3s;
+}
+
+#yes{
+background:#ff1493;
+color:white;
+}
+
+#no{
+background:#666;
+color:white;
+position:absolute;
+left:60%;
+top:72%;
+}
+
+.heart{
+position:fixed;
+bottom:-50px;
+font-size:30px;
+animation:float 4s linear forwards;
+pointer-events:none;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>❤️ Will You Go On A Date With Me? ❤️</h1>
+
+<p id="text">
+Please say Yes...🥺❤️
+</p>
+
+<button id="yes">YES ❤️</button>
+
+<button id="no">NO 😅</button>
+
+</div>
+
+<script>
+
+const yes=document.getElementById("yes");
+const no=document.getElementById("no");
+const text=document.getElementById("text");
+
+const messages=[
+
+"🥺 Please don't break my heart...",
+"🌹 I'll bring flowers.",
+"🍫 I'll bring your favorite chocolates.",
+"🥹 Pretty please?",
+"❤️ You look even cuter when you press YES.",
+"💕 I promise we'll have fun.",
+"🥰 Come on... click YES!",
+"💖 My heart says YES already.",
+"😍 You're amazing!",
+"😂 Nice try... NO isn't allowed!"
+
+];
+
+let count=0;
+let yesSize=22;
+
+function moveNo(){
+
+no.style.left=Math.random()*(window.innerWidth-150)+"px";
+no.style.top=Math.random()*(window.innerHeight-100)+"px";
+
+text.innerHTML=messages[count%messages.length];
+
+count++;
+
+yesSize+=6;
+
+yes.style.fontSize=yesSize+"px";
+
+}
+
+no.addEventListener("mouseover",moveNo);
+no.addEventListener("click",moveNo);
+
+yes.onclick=function(){
+
+document.body.innerHTML=`
+
+<div style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;background:linear-gradient(135deg,#ff5ca8,#ffb6d9);">
+
+<h1 style="font-size:70px;color:white;">
+YAYYYYY!! ❤️🥳
+</h1>
+
+<h2 style="color:white;">
+Thank You Salina ❤️<br>
+I can't wait for our date! 🌹🥰
+</h2>
+
+<h1 style="font-size:90px;">
+🎉❤️🎊💖🥰🌹
+</h1>
+
+</div>
+
+`;
+
+for(let i=0;i<80;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*35)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),4000);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
