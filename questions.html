@@ -3,49 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Questions ❤️</title>
+<title>Questions For You ❤️</title>
+
 <link rel="stylesheet" href="style.css">
 
 <style>
-.container{
-    max-width:700px;
-    margin:auto;
-    padding:20px;
-}
 
 .question{
-    margin:20px 0;
+    margin:25px 0;
 }
 
 .question p{
     font-size:20px;
-    color:#ff1493;
+    color:#ff2d75;
     font-weight:bold;
 }
 
-textarea,
-input{
+input,textarea{
     width:100%;
     padding:12px;
     border:2px solid pink;
-    border-radius:10px;
+    border-radius:12px;
     font-size:16px;
 }
 
+textarea{
+    height:90px;
+    resize:none;
+}
+
 button{
-    margin-top:20px;
-    padding:15px 30px;
-    background:#ff4d88;
+    margin-top:25px;
+    background:#ff2d75;
     color:white;
     border:none;
-    border-radius:10px;
+    padding:15px 35px;
     font-size:20px;
+    border-radius:30px;
     cursor:pointer;
 }
 
 button:hover{
-    background:#ff1f6b;
+    background:#ff0055;
 }
+
 </style>
 
 </head>
@@ -64,7 +65,9 @@ button:hover{
 
 <div class="container">
 
-<h1>💕 Questions For You 💕</h1>
+<h1>💕 Questions Just For You 💕</h1>
+
+<p>Please answer honestly from your heart. ❤️</p>
 
 <form action="https://formspree.io/f/mvzeoajn" method="POST">
 
@@ -79,13 +82,48 @@ button:hover{
 </div>
 
 <div class="question">
-<p>😁 What is your favorite thing about me?</p>
-<textarea name="Favorite thing about me" required></textarea>
+<p>🥰 What nickname do you want to call me?</p>
+<textarea name="Nickname"></textarea>
+</div>
+
+<div class="question">
+<p>💖 Do you miss me when I'm not with you?</p>
+<textarea name="Do you miss me?"></textarea>
+</div>
+
+<div class="question">
+<p>🤔 Do you miss someone?</p>
+<textarea name="Do you miss someone?"></textarea>
 </div>
 
 <div class="question">
 <p>❤️ What do you like most about me?</p>
-<textarea name="What do you like most about me?" required></textarea>
+<textarea name="What do you like most about me?"></textarea>
+</div>
+
+<div class="question">
+<p>😁 What is your favorite thing about me?</p>
+<textarea name="Favorite thing about me"></textarea>
+</div>
+
+<div class="question">
+<p>🌸 What is your favorite memory of us?</p>
+<textarea name="Favorite memory"></textarea>
+</div>
+
+<div class="question">
+<p>🌍 Where would you like us to travel together?</p>
+<textarea name="Travel together"></textarea>
+</div>
+
+<div class="question">
+<p>💍 What is your biggest dream for us?</p>
+<textarea name="Dream"></textarea>
+</div>
+
+<div class="question">
+<p>😊 What makes you smile the most?</p>
+<textarea name="Smile"></textarea>
 </div>
 
 <div class="question">
@@ -93,7 +131,7 @@ button:hover{
 <textarea name="Message"></textarea>
 </div>
 
-<button type="submit">💖 Submit Answers 💖</button>
+<button type="submit">❤️ Submit Answers ❤️</button>
 
 </form>
 
