@@ -3,11 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Questions For You ❤️</title>
-
-<link rel="stylesheet" href="style.css">
+<title>Questions ❤️</title>
 
 <style>
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#ffd6e8,#ffeef7);
+}
+
+.container{
+    max-width:800px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(255,20,147,.2);
+}
+
+h1{
+    text-align:center;
+    color:#ff1493;
+}
 
 .question{
     margin:25px 0;
@@ -15,7 +32,7 @@
 
 .question p{
     font-size:20px;
-    color:#ff2d75;
+    color:#ff1493;
     font-weight:bold;
 }
 
@@ -23,51 +40,66 @@ input,textarea{
     width:100%;
     padding:12px;
     border:2px solid pink;
-    border-radius:12px;
+    border-radius:10px;
     font-size:16px;
+    box-sizing:border-box;
 }
 
 textarea{
-    height:90px;
-    resize:none;
+    min-height:80px;
+    resize:vertical;
 }
 
 button{
-    margin-top:25px;
-    background:#ff2d75;
-    color:white;
+    width:100%;
+    padding:15px;
     border:none;
-    padding:15px 35px;
-    font-size:20px;
-    border-radius:30px;
+    border-radius:12px;
+    background:#ff4d88;
+    color:white;
+    font-size:22px;
     cursor:pointer;
+    transition:.3s;
 }
 
 button:hover{
-    background:#ff0055;
+    background:#ff1f6b;
 }
 
+#thanksMessage{
+    display:none;
+    text-align:center;
+    font-size:28px;
+    color:#ff1493;
+    margin-top:30px;
+    font-weight:bold;
+}
+
+.heart{
+    position:fixed;
+    bottom:-50px;
+    animation:floatUp 4s linear forwards;
+    pointer-events:none;
+}
+
+@keyframes floatUp{
+from{
+transform:translateY(0);
+opacity:1;
+}
+to{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
 </style>
 
 </head>
-
 <body>
-
-<nav>
-<a href="home.html">🏠 Home</a>
-<a href="letter.html">💌 Letter</a>
-<a href="gallery.html">📸 Gallery</a>
-<a href="questions.html">💕 Questions</a>
-<a href="memories.html">⏳ Memories</a>
-<a href="surprise.html">🎁 Surprise</a>
-<a href="music.html">🎵 Music</a>
-</nav>
 
 <div class="container">
 
-<h1>💕 Questions Just For You 💕</h1>
-
-<p>Please answer honestly from your heart. ❤️</p>
+<h1>💖 Questions For You 💖</h1>
 
 <form action="https://formspree.io/f/mvzeoajn" method="POST">
 
@@ -77,80 +109,99 @@ button:hover{
 </div>
 
 <div class="question">
+<p>🥰 What nickname do you want to call me?</p>
+<input type="text" name="Nickname">
+</div>
+
+<div class="question">
+<p>💖 Do you miss me when I'm not with you?</p>
+<textarea name="Do you miss me?" required></textarea>
+</div>
+
+<div class="question">
 <p>🥺 Would you cry for me?</p>
 <textarea name="Would you cry for me?" required></textarea>
 </div>
 
 <div class="question">
-<p>🥰 What nickname do you want to call me?</p>
-<textarea name="Nickname"></textarea>
-</div>
-
-<div class="question">
-<p>💖 Do you miss me when I'm not with you?</p>
-<textarea name="Do you miss me?"></textarea>
-</div>
-
-<div class="question">
-<p>🤔 Do you miss someone?</p>
-<textarea name="Do you miss someone?"></textarea>
-</div>
-
-<div class="question">
 <p>❤️ What do you like most about me?</p>
-<textarea name="What do you like most about me?"></textarea>
+<textarea name="What do you like most about me?" required></textarea>
 </div>
 
 <div class="question">
 <p>😁 What is your favorite thing about me?</p>
-<textarea name="Favorite thing about me"></textarea>
+<textarea name="Favorite thing about me?" required></textarea>
 </div>
 
 <div class="question">
-<p>🌸 What is your favorite memory of us?</p>
+<p>💭 Do you miss someone?</p>
+<textarea name="Do you miss someone?"></textarea>
+</div>
+
+<div class="question">
+<p>😍 What was your first impression of me?</p>
+<textarea name="First impression"></textarea>
+</div>
+
+<div class="question">
+<p>🌹 What is your favorite memory with me?</p>
 <textarea name="Favorite memory"></textarea>
 </div>
 
 <div class="question">
-<p>🌍 Where would you like us to travel together?</p>
-<textarea name="Travel together"></textarea>
+<p>💍 Do you see us together in the future?</p>
+<textarea name="Future together"></textarea>
 </div>
 
 <div class="question">
-<p>💍 What is your biggest dream for us?</p>
-<textarea name="Dream"></textarea>
-</div>
-
-<div class="question">
-<p>😊 What makes you smile the most?</p>
-<textarea name="Smile"></textarea>
-</div>
-
-<div class="question">
-<p>💌 Write a sweet message for me.</p>
+<p>💌 Write a sweet message for me ❤️</p>
 <textarea name="Message"></textarea>
 </div>
 
-<button type="submit">❤️ Submit Answers ❤️</button>
-
-</form>
-<br><br>
-
-<button type="submit" id="submitBtn">
-    ❤️ Submit Answers ❤️
+<button type="submit">
+❤️ Submit Answers ❤️
 </button>
 
-<p id="thanksMessage" style="
-display:none;
-font-size:28px;
-color:#ff1493;
-font-weight:bold;
-text-align:center;
-margin-top:20px;">
-💖 Thank you Salina! 💖<br>
+<div id="thanksMessage">
+💖 Thank You Salina! 💖<br><br>
 Your answers have been sent to Pramod ❤️
-</p>
 </div>
+
+</form>
+
+</div>
+
+<script>
+const form=document.querySelector("form");
+
+form.addEventListener("submit",function(){
+
+setTimeout(function(){
+
+document.getElementById("thanksMessage").style.display="block";
+
+for(let i=0;i<40;i++){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(20+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},4000);
+
+}
+
+},500);
+
+});
+</script>
 
 </body>
 </html>
