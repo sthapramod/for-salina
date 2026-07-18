@@ -1,36 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Gallery</title>
-<link rel="stylesheet" href="style.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery ❤️</title>
 
+<link rel="stylesheet" href="style.css">
+
+<style>
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+    border-radius:20px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+}
+
+.popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.85);
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
+
+.popup img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:20px;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:30px;
+    color:white;
+    font-size:45px;
+    cursor:pointer;
+}
+</style>
+
+</head>
 <body>
 
 <nav>
 <a href="home.html">🏠 Home</a>
 <a href="letter.html">💌 Letter</a>
-<a href="gallery.html">📸 Gallery</a>
+<a href="gallery.html">📷 Gallery</a>
 <a href="questions.html">💕 Questions</a>
 <a href="memories.html">⏳ Memories</a>
 <a href="surprise.html">🎁 Surprise</a>
 <a href="music.html">🎵 Music</a>
+<a href="date.html">💖 Date</a>
 </nav>
 
 <div class="container">
 
-<h1>📸 Our Memories</h1>
+<h1>📷 Our Gallery ❤️</h1>
 
 <div class="gallery">
 
-<img src="photo1.png">
-<img src="photo2.png">
-<img src="photo3.png">
-<img src="photo4.png">
+<img src="images/photo1.png" onclick="openImage(this.src)">
+<img src="images/photo2.png" onclick="openImage(this.src)">
+<img src="images/photo3.png" onclick="openImage(this.src)">
+<img src="images/photo4.png" onclick="openImage(this.src)">
+<img src="images/photo5.png" onclick="openImage(this.src)">
 
 </div>
 
 </div>
+
+<div class="popup" id="popup">
+<span class="close" onclick="closeImage()">&times;</span>
+<img id="popupImage">
+</div>
+
+<script>
+function openImage(src){
+    document.getElementById("popup").style.display="flex";
+    document.getElementById("popupImage").src=src;
+}
+
+function closeImage(){
+    document.getElementById("popup").style.display="none";
+}
+
+document.getElementById("popup").addEventListener("click",function(e){
+    if(e.target.id=="popup"){
+        closeImage();
+    }
+});
+</script>
 
 </body>
 </html>
