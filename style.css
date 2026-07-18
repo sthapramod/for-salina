@@ -1,68 +1,156 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#ffd6e7,#fff5f8);
+    background:linear-gradient(135deg,#ffd6e8,#ffeef5);
     color:#333;
+    min-height:100vh;
 }
 
+/* Navigation */
+
 nav{
-    background:#ff4d88;
-    padding:15px;
-    text-align:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    background:#ff4f8b;
+    padding:12px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
 }
 
 nav a{
     color:white;
     text-decoration:none;
-    margin:10px;
-    font-weight:bold;
+    background:#ff6aa2;
+    padding:10px 16px;
+    border-radius:12px;
+    transition:.3s;
+    font-weight:600;
 }
 
 nav a:hover{
-    color:yellow;
+    background:#ff2f79;
+    transform:translateY(-2px);
 }
+
+/* Main Card */
 
 .container{
-    width:90%;
     max-width:900px;
+    width:92%;
     margin:40px auto;
     background:white;
+    border-radius:25px;
     padding:30px;
-    border-radius:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
     text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
+/* Headings */
+
 h1{
-    color:#ff2d75;
+    color:#ff2f79;
     margin-bottom:20px;
 }
 
-button{
-    background:#ff2d75;
+h2{
+    color:#ff4f8b;
+    margin:20px 0;
+}
+
+p{
+    line-height:1.8;
+    margin:15px 0;
+}
+
+/* Images */
+
+img{
+    max-width:100%;
+    border-radius:20px;
+    margin-top:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+}
+
+/* Buttons */
+
+button,
+input[type=submit]{
+    background:#ff2f79;
     color:white;
     border:none;
-    padding:12px 25px;
-    border-radius:30px;
+    padding:14px 25px;
+    border-radius:12px;
     cursor:pointer;
+    font-size:16px;
+    transition:.3s;
+    margin-top:20px;
+}
+
+button:hover,
+input[type=submit]:hover{
+    background:#ff005d;
+    transform:scale(1.05);
+}
+
+/* Forms */
+
+input,
+textarea{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    margin-bottom:20px;
+    border:2px solid #ffd1e1;
+    border-radius:12px;
+    font-size:16px;
+    outline:none;
+}
+
+input:focus,
+textarea:focus{
+    border-color:#ff2f79;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+/* Question Box */
+
+.question{
+    text-align:left;
+    margin-bottom:25px;
+}
+
+.question p{
+    color:#ff2f79;
+    font-weight:bold;
     font-size:18px;
 }
 
-button:hover{
-    background:#ff0055;
+/* Video */
+
+video{
+    width:100%;
+    border-radius:15px;
+    margin-top:20px;
 }
 
-input{
-    padding:12px;
-    width:250px;
-    border-radius:10px;
-    border:2px solid pink;
-}
+/* Gallery */
 
 .gallery{
     display:grid;
@@ -72,48 +160,62 @@ input{
 
 .gallery img{
     width:100%;
-    border-radius:15px;
-    transition:.3s;
 }
 
-.gallery img:hover{
-    transform:scale(1.05);
-}
-/* Mobile Responsive Menu */
+/* Yes / No Buttons */
 
-@media screen and (max-width:768px){
-
-nav{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:10px;
-    padding:15px;
+#yesBtn,
+#noBtn{
+    padding:15px 30px;
+    font-size:18px;
+    margin:15px;
 }
 
-nav a{
-    text-decoration:none;
-    color:white;
-    background:#ff1493;
-    padding:10px 15px;
-    border-radius:10px;
-    font-size:16px;
-    transition:0.3s;
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#777;
 }
 
-nav a:hover{
-    background:#ff69b4;
-}
-@media (max-width:768px){
+/* Mobile */
 
-nav{
-    flex-wrap:wrap;
-}
+@media(max-width:768px){
 
-nav a{
-    font-size:14px;
-    padding:8px 12px;
-}
+    nav{
+        justify-content:flex-start;
+        overflow-x:auto;
+        flex-wrap:nowrap;
+        white-space:nowrap;
+        scrollbar-width:none;
+    }
 
+    nav::-webkit-scrollbar{
+        display:none;
+    }
+
+    nav a{
+        flex:0 0 auto;
+        font-size:14px;
+        padding:8px 12px;
+    }
+
+    .container{
+        width:95%;
+        padding:20px;
+    }
+
+    h1{
+        font-size:28px;
+    }
+
+    h2{
+        font-size:22px;
+    }
+
+    button,
+    input[type=submit]{
+        width:100%;
+    }
 }
