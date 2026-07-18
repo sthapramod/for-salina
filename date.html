@@ -3,67 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Date With Me ❤️</title>
+<title>💖 Date With Me</title>
+
+<link rel="stylesheet" href="style.css">
 
 <style>
 
 body{
-margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#ffd6e8,#fff0f6);
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-text-align:center;
+    margin:0;
+    font-family:Poppins,Arial,sans-serif;
+    background:linear-gradient(135deg,#ffd6e8,#fff0f6);
+}
+
+nav{
+    background:#ff4f8b;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+}
+
+.logo{
+    color:white;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.menu{
+    display:flex;
+    gap:10px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+    background:#ff69b4;
+    padding:10px 15px;
+    border-radius:10px;
+}
+
+.menu-btn{
+    display:none;
+    color:white;
+    font-size:30px;
+    cursor:pointer;
 }
 
 .container{
-position:relative;
+    text-align:center;
+    margin-top:60px;
+    padding:20px;
 }
 
 h1{
-color:#ff1493;
-font-size:45px;
+    color:#ff1493;
+    font-size:42px;
 }
 
-p{
-font-size:24px;
-color:#ff1493;
+#message{
+    color:#ff1493;
+    font-size:24px;
+    margin-bottom:40px;
 }
 
-button{
-padding:15px 35px;
-font-size:22px;
-border:none;
-border-radius:12px;
-cursor:pointer;
-transition:.3s;
+.buttons{
+    position:relative;
+    height:300px;
 }
 
-#yes{
-background:#ff1493;
-color:white;
+#yesBtn{
+    background:#ff1493;
+    color:white;
+    border:none;
+    padding:18px 40px;
+    font-size:22px;
+    border-radius:15px;
+    cursor:pointer;
+    transition:.3s;
 }
 
-#no{
-background:#666;
-color:white;
-position:absolute;
-left:60%;
-top:72%;
+#noBtn{
+    background:#666;
+    color:white;
+    border:none;
+    padding:18px 40px;
+    font-size:22px;
+    border-radius:15px;
+    cursor:pointer;
+    position:absolute;
+    left:60%;
+    top:0;
 }
 
 .heart{
-position:fixed;
-bottom:-50px;
-font-size:30px;
-animation:float 4s linear forwards;
-pointer-events:none;
+    position:fixed;
+    bottom:-50px;
+    animation:floatUp 4s linear forwards;
+    pointer-events:none;
 }
 
-@keyframes float{
+@keyframes floatUp{
 0%{
 transform:translateY(0);
 opacity:1;
@@ -74,58 +113,122 @@ opacity:0;
 }
 }
 
+@media(max-width:768px){
+
+.menu-btn{
+display:block;
+}
+
+.menu{
+display:none;
+position:absolute;
+top:65px;
+left:0;
+width:100%;
+background:#ff4f8b;
+flex-direction:column;
+padding:15px;
+}
+
+.menu.show{
+display:flex;
+}
+
+.menu a{
+margin:5px 0;
+text-align:center;
+}
+
+#noBtn{
+left:55%;
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
 
+<nav>
+
+<div class="logo">❤️ For Salina ❤️</div>
+
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+<div class="menu" id="menu">
+
+<a href="home.html">🏠 Home</a>
+<a href="letter.html">💌 Letter</a>
+<a href="gallery.html">📸 Gallery</a>
+<a href="questions.html">💕 Questions</a>
+<a href="memories.html">⏳ Memories</a>
+<a href="surprise.html">🎁 Surprise</a>
+<a href="music.html">🎵 Music</a>
+<a href="date.html">💖 Date</a>
+
+</div>
+
+</nav>
+
 <div class="container">
 
-<h1>❤️ Will You Go On A Date With Me? ❤️</h1>
+<h1>💖 Will You Go On A Date With Me? 💖</h1>
 
-<p id="text">
-Please say Yes...🥺❤️
+<p id="message">
+🥺 Please choose wisely...
 </p>
 
-<button id="yes">YES ❤️</button>
+<div class="buttons">
 
-<button id="no">NO 😅</button>
+<button id="yesBtn">YES ❤️</button>
+
+<button id="noBtn">NO 😅</button>
+
+</div>
 
 </div>
 
 <script>
 
-const yes=document.getElementById("yes");
-const no=document.getElementById("no");
-const text=document.getElementById("text");
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("show");
+}
 
 const messages=[
-
 "🥺 Please don't break my heart...",
-"🌹 I'll bring flowers.",
-"🍫 I'll bring your favorite chocolates.",
-"🥹 Pretty please?",
-"❤️ You look even cuter when you press YES.",
-"💕 I promise we'll have fun.",
-"🥰 Come on... click YES!",
-"💖 My heart says YES already.",
-"😍 You're amazing!",
-"😂 Nice try... NO isn't allowed!"
-
+"🌹 I'll bring flowers!",
+"🍫 I'll buy chocolates!",
+"🥹 Pretty please...",
+"💕 It'll be fun!",
+"❤️ You look cute saying YES!",
+"🥰 Come on...",
+"😂 Nice try!",
+"😍 You can't catch me!",
+"💖 Please say YES!"
 ];
 
-let count=0;
+let index=0;
 let yesSize=22;
+
+const yes=document.getElementById("yesBtn");
+const no=document.getElementById("noBtn");
+const message=document.getElementById("message");
 
 function moveNo(){
 
-no.style.left=Math.random()*(window.innerWidth-150)+"px";
-no.style.top=Math.random()*(window.innerHeight-100)+"px";
+const x=Math.random()*(window.innerWidth-140);
 
-text.innerHTML=messages[count%messages.length];
+const y=Math.random()*(window.innerHeight-140);
 
-count++;
+no.style.position="fixed";
+no.style.left=x+"px";
+no.style.top=y+"px";
+
+message.innerHTML=messages[index%messages.length];
+
+index++;
 
 yesSize+=6;
 
@@ -139,27 +242,22 @@ no.addEventListener("click",moveNo);
 yes.onclick=function(){
 
 document.body.innerHTML=`
+<div style="height:100vh;display:flex;justify-content:center;align-items:center;flex-direction:column;background:linear-gradient(#ff5ca8,#ffd6e8);text-align:center;">
 
-<div style="display:flex;justify-content:center;align-items:center;height:100vh;flex-direction:column;background:linear-gradient(135deg,#ff5ca8,#ffb6d9);">
+<h1 style="font-size:60px;color:white;">🎉 YAY!! ❤️</h1>
 
-<h1 style="font-size:70px;color:white;">
-YAYYYYY!! ❤️🥳
-</h1>
+<h2 style="color:white;">Thank you Salina 💖</h2>
 
-<h2 style="color:white;">
-Thank You Salina ❤️<br>
+<p style="font-size:24px;color:white;">
 I can't wait for our date! 🌹🥰
-</h2>
-
-<h1 style="font-size:90px;">
-🎉❤️🎊💖🥰🌹
-</h1>
+</p>
 
 </div>
-
 `;
 
-for(let i=0;i<80;i++){
+for(let i=0;i<120;i++){
+
+setTimeout(function(){
 
 let heart=document.createElement("div");
 
@@ -169,11 +267,13 @@ heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
 
-heart.style.fontSize=(20+Math.random()*35)+"px";
+heart.style.fontSize=(20+Math.random()*25)+"px";
 
 document.body.appendChild(heart);
 
 setTimeout(()=>heart.remove(),4000);
+
+},i*40);
 
 }
 
